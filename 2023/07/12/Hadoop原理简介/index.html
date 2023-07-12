@@ -29,12 +29,13 @@
 <meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img.png">
 <meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-1.png">
 <meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-2.png">
-<meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img_3.png">
+<meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-3.png">
+<meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-6.png">
 <meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-10.png">
 <meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-4.png">
 <meta property="og:image" content="http://example.com/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img_5.png">
 <meta property="article:published_time" content="2023-07-12T05:15:52.632Z">
-<meta property="article:modified_time" content="2023-07-12T08:43:07.106Z">
+<meta property="article:modified_time" content="2023-07-12T09:18:17.831Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Hadoop">
 <meta property="article:tag" content="大数据">
@@ -232,7 +233,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.7k 字
+          5.9k 字
         
       </span>
     
@@ -243,7 +244,7 @@
         
         
         
-          39 分钟
+          49 分钟
         
       </span>
     
@@ -427,8 +428,55 @@
 <li>资源管理的效率比较低。</li>
 </ol>
 <p>所以，2012年5月，Hadoop推出了2.0版本，在原本的分工中，MapReduce负责资源管理和计算。在2.x中，在HDFS之上，增加了<strong>YARN（资源管理框架）层</strong>。它是一个资源管理模块，为各类应用程序提供资源管理和调度。</p>
-<p><img src="/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img_3.png" srcset="/img/loading.gif" lazyload alt="img_1.png"></p>
-<h2 id="2-2-Yarn原理"><a href="#2-2-Yarn原理" class="headerlink" title="2.2 Yarn原理"></a>2.2 Yarn原理</h2><h3 id="2-2-1"><a href="#2-2-1" class="headerlink" title="2.2.1"></a>2.2.1</h3><p>前文提到MapReduce</p>
+<p><img src="/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-3.png" srcset="/img/loading.gif" lazyload alt="Hadoop 1.0与2.0对比"></p>
+<h2 id="2-2-Yarn原理"><a href="#2-2-Yarn原理" class="headerlink" title="2.2 Yarn原理"></a>2.2 Yarn原理</h2><h3 id="2-2-1-Yarn简介"><a href="#2-2-1-Yarn简介" class="headerlink" title="2.2.1 Yarn简介"></a>2.2.1 Yarn简介</h3><p>前文提到MapReduce是依托HDFS而生的，同样，Yarn也是依托HDFS。在功能上说，Yarn和MapReduce是不可能分开的。</p>
+<p>Yarn也是主从式架构，主节点为ResourceManager，从节点NodeManager。其功能架构图如下：</p>
+<p><img src="/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-6.png" srcset="/img/loading.gif" lazyload alt="Yarn功能架构图"></p>
+<ul>
+<li><p><strong>ResourceManager</strong></p>
+<blockquote>
+<p>全局资源管理器由两部分组成，分别为Scheduler 和 ApplicationsManager。</p>
+</blockquote>
+<ol>
+<li><p><strong>ApplicationsManager</strong>  </p>
+<blockquote>
+<p>主要负责为应用（如 mapreduce程序）分配第一个Container（资源池）来运行我们的ApplicationsMaster；负责监控ApplicationMaster，并且在遇到失败的时候重启ApplicationMaster。</p>
+</blockquote>
+</li>
+<li><p><strong>Scheduler</strong></p>
+<blockquote>
+<p>调度器负责将资源分配给各种正在运行的应用程序，这些应用程序受到容量、队列等常见的限制。调度器是纯粹的调度器，它不监视或跟踪应用程序的状态。此外，它也不能保证重启失败的应用程（由ApplicationManager负责）。调度器根据应用程序的资源需求执行其调度功能；它是基于Container的抽象概念来实现资源调度的，Scheduler通过给任务分配Container的方式来分配资源。</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>调度器是可插拔的，常用的调度器有CapacityScheduler和FairScheduler。</p>
+</blockquote>
+</li>
+<li><p><strong>NodeManager</strong></p>
+<blockquote>
+<p>NodeManager节点资源管理器，是每台机器的框架客户端&#x2F;代理，负责Container容器管理，监控他们的资源使用，并汇报给ResourceManager&#x2F;Scheduler。</p>
+</blockquote>
+<ol>
+<li><strong>Container</strong>：<blockquote>
+<p>NodeManager将节点中的资源切分出来组成一个个可以单独运行任务（map，reduce）的Container容器，用来运行任务。容器中资源目前只支内存、cpu。一个Container类似于开辟了一个虚拟机，一个NodeManager中可以分配一个或者多个Container。Container底层使用了轻量级资源隔离机制Cgroups进行资源隔离（docker底层好像也是使用了Cgroups）。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>Container是Yarn集群分配资源的基本单位</strong>。</p>
+<ul>
+<li><strong>ApplicationMaster</strong><blockquote>
+<p>ApplicationMaster运行在NodeManager的Container中，并且是应用程序申请到的第一个Container。它负责一个应用程序中具体任务的执行，比如mapreduce应用的map任务，reduce任务，每一个应用都有一个ApplicationMaster，它受ApplicationsManager管理，ApplicationMaster进程如果非正常死亡，ApplicationsManager可以重启它。<br>主要功能：</p>
+</blockquote>
+<ol>
+<li>与ResourceManager中的Scheduler 协商获取执行资源。</li>
+<li>与NodeManager通讯以启动，停止任务</li>
+<li>监控所属的任务的执行。</li>
+</ol>
+</li>
+</ul>
 <h1 id="四、Hadoop生态圈"><a href="#四、Hadoop生态圈" class="headerlink" title="四、Hadoop生态圈"></a>四、Hadoop生态圈</h1><h2 id="4-1-Hadoop-生态圈"><a href="#4-1-Hadoop-生态圈" class="headerlink" title="4.1 Hadoop 生态圈"></a>4.1 Hadoop 生态圈</h2><p><img src="/2023/07/12/Hadoop%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B/img-10.png" srcset="/img/loading.gif" lazyload alt="词频分析.png"></p>
 <p>在整个Hadoop架构中，计算框架起到<strong>承上启下</strong>的作用，一方面可以操作HDFS中的数据，另一方面可以被封装，提供Hive、Pig这样的上层组件的调用。</p>
 <p>简单介绍一下其中几个比较重要的组件。</p>
