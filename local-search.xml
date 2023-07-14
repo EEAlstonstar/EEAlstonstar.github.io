@@ -5,12 +5,22 @@
   
   <entry>
     <title>深度学习基础（下）</title>
-    <link href="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
-    <url>/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/</url>
+    <link href="/2023/07/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
+    <url>/2023/07/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天继续来弄深度学习。主要就是详细探讨一下常用网络什么的。应该会另开一篇讲讲Attention和Tranformer机制，这块比较重要。这样也就差不多能入门了。</p><p>至于周末，可以开始学一下对比学习什么的。这样算下来。基本到15号基础知识就复习的差不多了。在学一下BERT这些，最多20号吧。然后7月就是跑BYOL-A。希望效果好一点吧。惋惜。</p><p>哎哟要我说本科生能做的工作无非是证明虽然铲子能挖土，但铁片+锤锤也能挖土（Tranformer+CNN&#x3D;VIT），真是的，要不是为了有学上谁来应付这个。</p><p>真是新时代摘棉花、21世纪流水线女工、赛博朋克富士康。</p><hr><h1 id="一、常见优化方法总结"><a href="#一、常见优化方法总结" class="headerlink" title="一、常见优化方法总结"></a>一、常见优化方法总结</h1>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>CV</tag>
+      
+      <tag>神经网络</tag>
+      
+      <tag>深度学习</tag>
+      
+    </tags>
     
   </entry>
   
@@ -29,9 +39,9 @@
       
       <tag>CV</tag>
       
-      <tag>深度学习</tag>
-      
       <tag>神经网络</tag>
+      
+      <tag>深度学习</tag>
       
     </tags>
     
@@ -88,11 +98,11 @@
       
       <tag>CV</tag>
       
-      <tag>神经网络</tag>
-      
       <tag>爬虫</tag>
       
       <tag>GUI</tag>
+      
+      <tag>神经网络</tag>
       
     </tags>
     
