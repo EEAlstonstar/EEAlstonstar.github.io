@@ -16,12 +16,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="暑假打算发篇论文，简单复习一下深度学习基础概念">
+    <meta name="description" content="暑假打算发篇论文，简单复习一下深度学习基础概念。本片包括感知机、超参数、反向传播、激活函数、损失函数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习基础">
+<meta property="og:title" content="深度学习基础(上)">
 <meta property="og:url" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="yuanxi">
-<meta property="og:description" content="暑假打算发篇论文，简单复习一下深度学习基础概念">
+<meta property="og:description" content="暑假打算发篇论文，简单复习一下深度学习基础概念。本片包括感知机、超参数、反向传播、激活函数、损失函数。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img.png">
 <meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_1.png">
@@ -41,16 +41,20 @@
 <meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_15.png">
 <meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_16.png">
 <meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_17.png">
-<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img.png">
-<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_1.png">
-<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_2.png">
-<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_3.png">
-<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_4.png">
+<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img0.png">
+<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img1.png">
+<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img2.png">
+<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img3.png">
+<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img4.png">
+<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img5.png">
+<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img6.png">
+<meta property="og:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img7.png">
 <meta property="article:published_time" content="2023-07-13T01:30:14.000Z">
-<meta property="article:modified_time" content="2023-07-13T07:36:45.359Z">
+<meta property="article:modified_time" content="2023-07-13T09:31:33.339Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CV">
-<meta property="article:tag" content="深度学习，神经网络">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="神经网络">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img.png">
   
@@ -58,7 +62,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>深度学习基础 - yuanxi</title>
+  <title>深度学习基础(上) - yuanxi</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -221,7 +225,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="深度学习基础"></span>
+            <span id="subtitle" data-typed-text="深度学习基础(上)"></span>
           
         </div>
 
@@ -244,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.6k 字
+          6.5k 字
         
       </span>
     
@@ -255,7 +259,7 @@
         
         
         
-          47 分钟
+          55 分钟
         
       </span>
     
@@ -301,7 +305,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">深度学习基础</h1>
+            <h1 style="display: none">深度学习基础(上)</h1>
             
               <p class="note note-info">
                 
@@ -367,12 +371,12 @@
 <p><strong>反向传播</strong>：<br>这个有点复杂，具体来说流程就是，正向传播求损失，反向传播回传误差，然后求梯度。更新参数。<br>简单举个例子吧：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_6.png" srcset="/img/loading.gif" lazyload alt="反向传播.png"><br>以这张图为例：<br>上图的前向传播（网络输出计算）过程如下：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_7.png" srcset="/img/loading.gif" lazyload alt="计算流程.png"></p>
 <p>误差的计算方法是mse：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_8.png" srcset="/img/loading.gif" lazyload alt="mse.png"></p>
 <p>具体来说们就是步步拆开的过程，先是总体求E，只需要注意每一个神经元中还有激活函数，netj和yj不是一个东西。</p>
-<p>具体的计算过程是<strong>梯度下降</strong>算法：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_9.png" srcset="/img/loading.gif" lazyload alt="img_9.png"><br>举一个具体例子进行阐述吧：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_10.png" srcset="/img/loading.gif" lazyload alt="img_10.png"><br>前向运算的过程如下：（使用的是sigmoid激活函数）<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_11.png" srcset="/img/loading.gif" lazyload alt="img_11.png"><br>下面是反向传播过程，首先要明确这是一个<strong>链式求导</strong>的过程：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_12.png" srcset="/img/loading.gif" lazyload alt="img_12.png"><br>然后是参数更新过程：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_13.png" srcset="/img/loading.gif" lazyload alt="img_13.png"></p>
+<p>具体的计算过程是<strong>梯度下降</strong>算法：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_9.png" srcset="/img/loading.gif" lazyload alt="梯度下降算法.png"><br>举一个具体例子进行阐述吧：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_10.png" srcset="/img/loading.gif" lazyload><br>前向运算的过程如下：（使用的是sigmoid激活函数）<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_11.png" srcset="/img/loading.gif" lazyload><br>下面是反向传播过程，首先要明确这是一个<strong>链式求导</strong>的过程：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_12.png" srcset="/img/loading.gif" lazyload alt="链式求导.png"><br>然后是参数更新过程：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_13.png" srcset="/img/loading.gif" lazyload alt="参数更新.png"></p>
 <hr>
 <h1 id="三、超参数"><a href="#三、超参数" class="headerlink" title="三、超参数"></a>三、超参数</h1><h2 id="3-1-什么是超参数？"><a href="#3-1-什么是超参数？" class="headerlink" title="3.1 什么是超参数？"></a>3.1 什么是超参数？</h2><ul>
 <li><strong>超参数</strong>：在机器学习的上下文中，超参数是在开始学习过程之前设置值的参数，而不是通过训练得到的参数数据。<br>通常情况下，需要对超参数进行优化，给学习机选择一组最优超参数，以提高学习的性能和效果。</li>
 </ul>
-<p>这里的重点主要在于：<strong>什么是学习率？</strong><br>以上文所提到的梯度下降来说，求梯度前的n就是学习率a。<br>可以很清晰地看到，学习率决定了梯度下降的快慢，以吴恩达机器学习课程为例：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_14.png" srcset="/img/loading.gif" lazyload alt="img_14.png"><br>我们先看一下上面出现的唯一一条公式，公式中的θ就是代表着权重参数，新的θ会由之前的θ计算得来，这个计算过程就是为了寻找目标函数收敛到最小值。那么公式中出现的α就是当下的学习率。</p>
+<p>这里的重点主要在于：<strong>什么是学习率？</strong><br>以上文所提到的梯度下降来说，求梯度前的n就是学习率a。<br>可以很清晰地看到，学习率决定了梯度下降的快慢，以吴恩达机器学习课程为例：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_14.png" srcset="/img/loading.gif" lazyload alt="吴恩达机器学习.png"><br>我们先看一下上面出现的唯一一条公式，公式中的θ就是代表着权重参数，新的θ会由之前的θ计算得来，这个计算过程就是为了寻找目标函数收敛到最小值。那么公式中出现的α就是当下的学习率。</p>
 <p>上面两张明显的对比图就给出了学习率过大和过小的情况。</p>
 <ul>
 <li><p>学习率设置<strong>过小</strong>的时候，每步太小，下降速度太慢，可能要花很长的时间才会找到最小值。</p>
@@ -385,7 +389,7 @@
 <p>它们将<strong>非线性特性</strong>引入到我们的网络中。</p>
 <p>如下图，在神经元中，输入的 inputs 通过加权，求和后，还被作用了一个函数，这个函数就是激活函数。</p>
 <p>引入激活函数是为了增加神经网络模型的非线性。没有激活函数的每层都相当于矩阵相乘。就算你叠加了若干层之后，无非还是个矩阵相乘罢了。</p>
-<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_15.png" srcset="/img/loading.gif" lazyload alt="img_15.png"></p>
+<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_15.png" srcset="/img/loading.gif" lazyload alt="为什么需要有激活函数.png"></p>
 <hr>
 <h2 id="4-2为什么要使用激活函数？"><a href="#4-2为什么要使用激活函数？" class="headerlink" title="4.2为什么要使用激活函数？"></a>4.2为什么要使用激活函数？</h2><ol>
 <li>激活函数对模型学习、理解非常复杂和非线性的函数具有重要作用。</li>
@@ -400,55 +404,126 @@
 <li>使用非线性激活函数，以便使网络更加强大，增加它的能力，使它可以学习<strong>复杂的事物</strong>，复杂的表单数据，以及表示输入输出之间非线性的复杂的任意函数映射。  </li>
 <li>使用非线性激活函数，能够从输入输出之间生成<strong>非线性映射</strong>。</li>
 </ul>
-<h2 id="4-4-常见激活函数"><a href="#4-4-常见激活函数" class="headerlink" title="4.4 常见激活函数"></a>4.4 常见激活函数</h2><p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_16.png" srcset="/img/loading.gif" lazyload alt="img_16.png"></p>
-<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_17.png" srcset="/img/loading.gif" lazyload alt="img_17.png"></p>
+<h2 id="4-4-常见激活函数"><a href="#4-4-常见激活函数" class="headerlink" title="4.4 常见激活函数"></a>4.4 常见激活函数</h2><p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_16.png" srcset="/img/loading.gif" lazyload alt="常见激活函数.png"></p>
+<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_17.png" srcset="/img/loading.gif" lazyload alt="常见激活函数.png"></p>
 <p>等等。挺多的。  </p>
 <p>关于激活函数的选择，有一个经验法则，很玄学：</p>
 <blockquote>
 <p>如果输出是0、1值（二分类问题），则输出层选择 sigmoid 函数，然后其它的所有单元都选择 Relu 函数。这是很多激活函数的默认选择，如果在隐藏层上不确定使用哪个激活函数，那么通常会使用 Relu 激活函数。有时，也会使用 tanh 激活函数。</p>
 </blockquote>
+<blockquote>
+<p>对于多分类问题，一般输出层选择softmax激活函数</p>
+</blockquote>
+<blockquote>
+<p>Tanh：它非常优秀，几乎适合所有场合</p>
+</blockquote>
+<blockquote>
+<p>ReLU：最常用的激活函数，如果不确定用哪个激活函数，就先使用ReLU或者Leaky ReLU，再尝试其他激活函数</p>
+</blockquote>
 <hr>
-<h1 id="五、优化方法总结"><a href="#五、优化方法总结" class="headerlink" title="五、优化方法总结"></a>五、优化方法总结</h1><hr>
-<h1 id="六、损失函数"><a href="#六、损失函数" class="headerlink" title="六、损失函数"></a>六、损失函数</h1><h2 id="6-1-损失函数定义"><a href="#6-1-损失函数定义" class="headerlink" title="6.1 损失函数定义"></a>6.1 损失函数定义</h2><p>在机器学习任务中，大部分监督学习算法都会有一个目标函数 (Objective Function),算法对该目标函数进行优化，称为优化算法的过程。 例如在分类或者回归任务中，使用损失函数( Loss Function )作为其目标函数对算法模型进行优化 。  </p>
+<h2 id="4-5-一些常见问题"><a href="#4-5-一些常见问题" class="headerlink" title="4.5 一些常见问题"></a>4.5 一些常见问题</h2><ul>
+<li><em><strong>为什么总是能看到Relu激活函数？</strong></em></li>
+</ul>
+<p>答：relu函数的优点如下：</p>
+<ul>
+<li><strong>训练更快</strong>：使用ReLU或者Leaky ReLU的神经网络通常会比使用sigmoid或tanh的神经网络学习得更快</li>
+<li><strong>避免了梯度弥散</strong>：当输入无穷大或无穷小时，sigmoid或tanh的梯度接近0，这会造成梯度弥散现象。<strong>而ReLU或者Leaky ReLU在输入大于0的部分，导数均为一个常数，避免了梯度弥散。</strong></li>
+<li><strong>单侧抑制，稀疏性</strong>：当输入小于0时，ReLU的梯度为0，神经元不会训练。模拟神经元的激活率是很低的这一特性，对输入信号的少部分进行选择性相应，正是这样的稀疏性提高了网络的性能。</li>
+</ul>
+<p>relu函数的缺点如下：</p>
+<ul>
+<li>在输入小于0的时候，即使有很大的梯度传播过来也会戛然而止。</li>
+</ul>
+<hr>
+<ul>
+<li><em><strong>为什么为什么tanh收敛速度比sigmoid快？</strong></em></li>
+</ul>
+<p>这与激活函数的求导有关：</p>
+<p>tanh′(x)&#x3D;1−tanh(x)^2 ，导数范围在（0，1）</p>
+<p>sigmoid’(x)&#x3D;s(x)(1-s(x))sigmoid<br>′<br> (x)&#x3D;s(x)(1−s(x))，导数范围在（0，1&#x2F;4）</p>
+<p>由此可见，tanh(x)梯度消失的问题比sigmoid(x)轻，所以tanh收敛速度比较快。</p>
+<hr>
+<h1 id="五、损失函数"><a href="#五、损失函数" class="headerlink" title="五、损失函数"></a>五、损失函数</h1><h2 id="5-1-损失函数定义"><a href="#5-1-损失函数定义" class="headerlink" title="5.1 损失函数定义"></a>5.1 损失函数定义</h2><p>在机器学习任务中，大部分监督学习算法都会有一个目标函数 (Objective Function),算法对该目标函数进行优化，称为优化算法的过程。 例如在分类或者回归任务中，使用损失函数( Loss Function )作为其目标函数对算法模型进行优化 。  </p>
 <p>在BP神经网络中，一般推导中，使用均方误差作为损失函数，而在实际中，常用交叉熵作为损失函数。如下图所示，我们可以清晰地观察到不同的损失函数在梯度下降过程中的收敛速度和性能都是不同的。</p>
 <ol>
 <li>均方误差作为损失函数收敛速度慢，可能会陷入局部最优解；</li>
 <li>而交叉熵作为损失函数的收敛速度比均方误差快，且较为容易找到函数最优解.</li>
 </ol>
 <p>因此了解损失函数的类型并掌握损失函数的使用技巧，有助于加深对深度学习的认知.</p>
-<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img.png" srcset="/img/loading.gif" lazyload alt="img.png"></p>
+<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img0.png" srcset="/img/loading.gif" lazyload></p>
 <p> 对于分类和回归模型使用的损失函数不同，下面将分别进行介绍。</p>
-<h2 id="6-2-回归损失函数"><a href="#6-2-回归损失函数" class="headerlink" title="6.2 回归损失函数"></a>6.2 回归损失函数</h2><p>(1)<strong>均方误差损失函数</strong><br>均方误差(Mean Squared Error Loss, MSE)损失函数定义如下：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_1.png" srcset="/img/loading.gif" lazyload alt="img_1.png"></p>
+<hr>
+<h2 id="5-2-回归损失函数"><a href="#5-2-回归损失函数" class="headerlink" title="5.2 回归损失函数"></a>5.2 回归损失函数</h2><p>(1)<strong>均方误差损失函数</strong></p>
+<p>均方误差(Mean Squared Error Loss, MSE)损失函数定义如下：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img1.png" srcset="/img/loading.gif" lazyload alt="mse.png"></p>
+<p>这里说一下MSE是无法处理梯度消失问题的。先说说什么是梯度消失。</p>
+<blockquote>
+<p>梯度消失是在神经网络训练过程中经常遇到的问题之一。<br>当使用基于梯度的优化算法（如反向传播）来更新神经网络的权重时，梯度消失指的是在<strong>网络的较早层（通常是深层）中，梯度逐渐变得非常小，接近于零，甚至完全消失。</strong><br>梯度消失的主要原因是使用某些激活函数（如Sigmoid或Tanh）时，这些函数的导数在输入值非常大或非常小的情况下会趋近于零。当反向传播的梯度通过多个层传递时，梯度值会不断缩小，最终导致较早层的梯度非常小或消失。</p>
+</blockquote>
+<p>而MSE（均方误差）是一种常用的损失函数，用于衡量预测值与目标值之间的差异。MSE本身并不能直接解决梯度消失问题。</p>
 <p>代码示例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">mean_squared_error</span>(<span class="hljs-params">y_true, y_pred</span>):<br>    <span class="hljs-keyword">return</span> np.mean(np.square(y_pred - y_true), axis=-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
 <p>(2) <strong>平均绝对误差损失函数</strong></p>
 <p>平均绝对误差(Mean Absolute Error Loss, MAE)损失函数定义如下：</p>
-<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_2.png" srcset="/img/loading.gif" lazyload alt="img_2.png"></p>
+<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img2.png" srcset="/img/loading.gif" lazyload alt="mae.png"></p>
 <p>代码示例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">mean_absolute_error</span>(<span class="hljs-params">y_true, y_pred</span>):<br>    <span class="hljs-keyword">return</span> np.mean(np.<span class="hljs-built_in">abs</span>(y_pred - y_true), axis=-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
 <p>(3) <strong>均方误差对数损失函数</strong></p>
-<p>均方误差对数(Mean Squared Log Error Loss, MSLE)损失函数定义如下：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_3.png" srcset="/img/loading.gif" lazyload alt="img_3.png"></p>
+<p>均方误差对数(Mean Squared Log Error Loss, MSLE)损失函数定义如下：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img3.png" srcset="/img/loading.gif" lazyload alt="msle.png"></p>
 <p>代码示例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">mean_squared_logarithmic_error</span>(<span class="hljs-params">y_true, y_pred</span>):<br>    first_log = np.log(np.clip(y_pred, <span class="hljs-number">10e-6</span>, <span class="hljs-literal">None</span>) + <span class="hljs-number">1.</span>)<br>    second_log = np.log(np.clip(y_true, <span class="hljs-number">10e-6</span>, <span class="hljs-literal">None</span>) + <span class="hljs-number">1.</span>)<br>    <span class="hljs-keyword">return</span> np.mean(np.square(first_log - second_log), axis=-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
 <p>(4) 平均绝对百分比误差损失函数</p>
-<p>平均绝对百分比(Mean Absolute Percentage Error Loss, MAPE)误差损失函数定义如下：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img_4.png" srcset="/img/loading.gif" lazyload alt="img_4.png"></p>
+<p>平均绝对百分比(Mean Absolute Percentage Error Loss, MAPE)误差损失函数定义如下：<br><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img4.png" srcset="/img/loading.gif" lazyload alt="mape.png"></p>
 <p>代码示例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">mean_absolute_percentage_error</span>(<span class="hljs-params">y_true, y_pred</span>):<br>    diff = np.<span class="hljs-built_in">abs</span>((y_pred - y_true) / np.clip(np.<span class="hljs-built_in">abs</span>(y_true), <span class="hljs-number">10e-6</span>, <span class="hljs-literal">None</span>))<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">100</span> * np.mean(diff, axis=-<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
-<p>(5) 小结<br>均方误差损失函数是使用最广泛的，并且在大部分情况下，均方误差有着不错的性能，因此被用作损失函数的<strong>基本衡量指标。</strong><br>MAE 则会比较有效地惩罚异常值，如果数据异常值较多，需要考虑使用平均绝对误差损失作为损失函数。<br>一般情况下，为了不让数据出现太多异常值，可以对数据进行预处理操作。<br>均方误差对数损失与均方误差的计算过程类似，多了对每个输出数据进行对数计算，目的是缩小函数输出的范围值。<br>平均绝对百分比误差损失则计算预测值与真实值的相对误差。均方误差对数损失与平均绝对百分 比误差损失实际上是用来处理大范围数据( [ − 10 5 , 10 5 ]的，<br>但是在神经网络中，我们常把输入数据归一化到一个合理范围 ( [ − 1 , 1 ])，然后再使用均方误差或者平均绝对误差损失来计算损失。</p>
-<h2 id="6-4分类损失函数"><a href="#6-4分类损失函数" class="headerlink" title="6.4分类损失函数"></a>6.4分类损失函数</h2><p>(1) Logistic损失函数<br>Logistic损失函数定义如下：</p>
+<p>(5) 小结<br>    <strong>均方误差损失函数是使用最广泛的</strong>，并且在大部分情况下，均方误差有着不错的性能，因此被用作损失函数的<strong>基本衡量指标。</strong><br>MAE 则会比较有效地惩罚异常值，如果数据异常值较多，需要考虑使用平均绝对误差损失作为损失函数。<br>    一般情况下，为了不让数据出现太多异常值，可以对数据进行预处理操作。 均方误差对数损失与均方误差的计算过程类似，多了对每个输出数据进行对数计算，<strong>目的是缩小函数输出的范围值</strong>。 </p>
+<p>平均绝对百分比误差损失则计算<strong>预测值与真实值的相对误差</strong>。均方误差对数损失与平均绝对百分比误差损失实际上是用来处理<strong>大范围数据</strong>的， 但是在神经网络中，我们常把输入数据归一化到一个合理范围([−1,1])，然后再使用均方误差或者平均绝对误差损失来计算损失。</p>
+<hr>
+<h2 id="5-3-分类损失函数"><a href="#5-3-分类损失函数" class="headerlink" title="5.3 分类损失函数"></a>5.3 分类损失函数</h2><p><strong>这一部分，了解就行了，毕竟我也不会</strong></p>
+<p>(1) Logistic损失函数</p>
+<p>Logistic损失函数定义如下：</p>
+<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img5.png" srcset="/img/loading.gif" lazyload alt="Logistic.png"></p>
 <p>(2) 负对数似然损失函数</p>
 <p>负对数似然损失函数(Negative Log Likelihood Loss)定义如下：</p>
+<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img6.png" srcset="/img/loading.gif" lazyload alt="负对数似然.png"></p>
 <p> (3) 交叉熵损失函数</p>
+<p><strong>这个比较重要 记一下</strong></p>
 <p>Logistic损失函数和负对数似然损失函数只能处理二分类问题，对于两个分类扩展到M个分类，使用交叉熵损失函数(Cross Entropy Loss)，其定义如下：</p>
+<p><img src="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/img7.png" srcset="/img/loading.gif" lazyload alt="交叉熵.png"></p>
 <p> 代码示例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">cross_entropy</span>(<span class="hljs-params">y_true, y_pred</span>):<br>    <span class="hljs-keyword">return</span> -np.mean(y_true * np.log(y_pred + <span class="hljs-number">10e-6</span>))<br></code></pre></td></tr></table></figure>
-<p>4.神经网络中常用的损失函数<br>神经网络中的损失函数可以自定义，前提是需要考虑数据本身和用于求解的优化方案。换句话说，自定义损失函数需要考虑输入的数据形式和对损失函数求导的算法。自定义损失函数其实是有些难度的，在实际工程项目上，结合激活函数来选择损失函数是常见的做法，常用组合有以下 3 种 。</p>
-<p>(1) ReLU + MSE<br>均方误差损失函数无法处理梯度消失问题，而使用 Leak ReLU 激活函数能够减少计算时梯度消失的问题，因此在神经网络中如果需要使用均方误差损失函数，一般采用 Leak ReLU 等可以减少梯度消失的激活函数。另外，由于均方误差具有普遍性，一般作为衡量损失值的标准，因此使用均方误差作为损失函数表现既不会太好也不至于太差。</p>
-<p>(2) Sigmoid + Logistic<br>Sigmoid 函数会引起梯度消失问题：根据链式求导法，Sigmoid 函数求导后由多个［0, 1］范围的数进行连乘，如其导数形式为 ，当其中一个数很小时，连成后会无限趋近于零直至最后消失。而类 Logistic 损失函数求导时，加上对数后连乘操作转化为求和操作，在一定程度上避免了梯度消失，所以我们经常可以看到 Sigmoid 激活函数＋交叉摘损失函数 的组合。</p>
-<p>(3) Softmax + Logisitc<br>在数学上，Softmax 激活函数会返回输出类的互斥概率分布，也就是能把离散的输出转换为一个同分布互斥的概率，如(0.2, 0.8)。另外，Logisitc 损失函数是基于概率的最大似然估计函数而来的，因此输出概率化能够更加方便优化算法进行求导和计算，所以我们经常可以看到输出层使xu用 Softmax 激活函数＋交叉熵损失函数 的组合。</p>
-<h2 id="6-7-激活函数、损失函数、优化函数的区别"><a href="#6-7-激活函数、损失函数、优化函数的区别" class="headerlink" title="6.7 激活函数、损失函数、优化函数的区别"></a>6.7 激活函数、损失函数、优化函数的区别</h2><p>1.激活函数：将神经网络上一层的输入，经过神经网络层的非线性变换转换后，通过激活函数，得到输出。常见的激活函数包括：sigmoid, tanh, relu等。</p>
-<p>2.损失函数：度量神经网络的输出的预测值，与实际值之间的差距的一种方式。常见的损失函数包括：最小二乘损失函数、交叉熵损失函数、回归中使用的smooth L1损失函数等。</p>
-<p>3.优化函数：也就是如何把损失值从神经网络的最外层传递到最前面。如最基础的梯度下降算法，随机梯度下降算法，批量梯度下降算法，带动量的梯度下降算法，Adagrad，Adadelta，Adam等。</p>
+
+<hr>
+<h2 id="5-4-神经网络中常用的损失函数"><a href="#5-4-神经网络中常用的损失函数" class="headerlink" title="5.4 神经网络中常用的损失函数"></a>5.4 神经网络中常用的损失函数</h2><p>神经网络中的损失函数可以自定义，前提是<strong>需要考虑数据本身和用于求解的优化方案</strong>。</p>
+<p>换句话说，自定义损失函数<strong>需要考虑输入的数据形式和对损失函数求导的算法</strong>。自定义损失函数其实是有些难度的，在实际工程项目上，结合激活函数来选择损失函数是常见的做法，常用组合有以下 3 种 。</p>
+<ul>
+<li><strong>ReLU + MSE</strong></li>
+</ul>
+<p>均方误差损失函数<strong>无法处理梯度消失问题</strong>，而使用 Leak ReLU 激活函数能够减少计算时梯度消失的问题.</p>
+<blockquote>
+<p>因此在神经网络中如果需要使用均方误差损失函数，一般采用 Leak ReLU 等可以减少梯度消失的激活函数。另外，由于均方误差具有普遍性，一般作为衡量损失值的标准，因此使用均方误差作为损失函数表现既不会太好也不至于太差。</p>
+</blockquote>
+<ul>
+<li><strong>Sigmoid + Logistic</strong></li>
+</ul>
+<p>Sigmoid 函数会引起<strong>梯度消失问题</strong></p>
+<blockquote>
+<p>根据链式求导法，Sigmoid 函数求导后由多个［0, 1］范围的数进行连乘，如其导数形式为 ，当其中一个数很小时，连成后会无限趋近于零直至最后消失。而类 Logistic 损失函数求导时，加上对数后连乘操作转化为求和操作，在一定程度上避免了梯度消失，所以我们经常可以看到 Sigmoid 激活函数＋交叉摘损失函数 的组合。</p>
+</blockquote>
+<ul>
+<li><strong>Softmax + Logisitc</strong></li>
+</ul>
+<p>在数学上，Softmax 激活函数会<strong>返回输出类的互斥概率分布</strong>，也就是能把离散的输出转换为一个同分布互斥的概率，如(0.2, 0.8)。</p>
+<blockquote>
+<p>另外，Logisitc 损失函数是基于概率的最大似然估计函数而来的，因此输出概率化能够更加方便优化算法进行求导和计算，所以我们经常可以看到输出层使xu用 Softmax 激活函数＋交叉熵损失函数 的组合。</p>
+</blockquote>
+<h2 id="5-5-激活函数、损失函数、优化函数的区别"><a href="#5-5-激活函数、损失函数、优化函数的区别" class="headerlink" title="5.5 激活函数、损失函数、优化函数的区别"></a>5.5 激活函数、损失函数、优化函数的区别</h2><ol>
+<li><p><strong>激活函数</strong>：将神经网络上一层的输入，经过神经网络层的非线性变换转换后，通过激活函数，得到输出。常见的激活函数包括：sigmoid, tanh, relu等。</p>
+</li>
+<li><p><strong>损失函数</strong>：度量神经网络的输出的预测值，与实际值之间的差距的一种方式。常见的损失函数包括：最小二乘损失函数、交叉熵损失函数、回归中使用的smooth L1损失函数等。</p>
+</li>
+<li><p><strong>优化函数</strong>：也就是如何把损失值从神经网络的最外层传递到最前面。如最基础的梯度下降算法，随机梯度下降算法，批量梯度下降算法，带动量的梯度下降算法，Adagrad，Adadelta，Adam等。</p>
+</li>
+</ol>
 
               
             </div>
@@ -462,7 +537,9 @@
       
         <a href="/tags/CV/">#CV</a>
       
-        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%8C%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#深度学习，神经网络</a>
+        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">#深度学习</a>
+      
+        <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#神经网络</a>
       
     </div>
   
@@ -474,7 +551,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>深度学习基础</div>
+      <div>深度学习基础(上)</div>
       <div>http://example.com/2023/07/13/深度学习基础/</div>
     </div>
     <div class="license-meta">
@@ -521,6 +598,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/07/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/" title="深度学习基础（下）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">深度学习基础（下）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
